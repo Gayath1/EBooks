@@ -33,7 +33,7 @@
         android:layout_height="64dp"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom|center"
-        android:onClick="insertOrder"
+        android:onClick="sendMessage"
         android:text="Place Order"
         android:textColor="#FFFDFD"
         android:theme="@style/Theme.MaterialButton"></Button>

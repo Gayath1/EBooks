@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Cart</string>
+    <string name="app_name">E Books</string>
+    <string name="Title">Payment</string>
 </resources>
