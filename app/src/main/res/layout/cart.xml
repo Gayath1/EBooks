@@ -1,42 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg1"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/layout_total"
-        android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:padding="5dp"
         android:weightSum="2">
-        <TextView android:gravity="end"
+
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_width="match_parent"
+            android:gravity="end"
             android:text="Total : "
-            android:textSize="20dp">
-        </TextView>
+            android:textSize="20dp"></TextView>
 
         <TextView
             android:id="@+id/tv_total"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_width="match_parent"
             android:text="0 Rs"
-            android:textSize="20dp">
-        </TextView>
+            android:textSize="20dp"></TextView>
     </LinearLayout>
 
-    <Button
+
+    <ImageButton
         android:id="@+id/btn_placeorder"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_width="119dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="false"
         android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom|center"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/check"
         android:onClick="sendMessage"
-        android:text="Place Order"
+        android:shadowRadius="5"
         android:textColor="#FFFDFD"
-        android:theme="@style/Theme.MaterialButton"></Button>
+        android:theme="@style/Theme.MaterialButton"></ImageButton>
 
 
 </RelativeLayout>

@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-public class Activity_cart extends AppCompatActivity {
+public class activity_cart extends AppCompatActivity {
 
     public static TextView tv_total;
 
@@ -25,7 +25,7 @@ public class Activity_cart extends AppCompatActivity {
     }
 
     public void sendMessage(View view) {
-        Intent intent = new Intent(this, Activity_payment.class);
+        Intent intent = new Intent(this, activity_payment.class);
         startActivity(intent);
     }
 
