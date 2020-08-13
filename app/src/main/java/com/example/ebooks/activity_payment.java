@@ -2,7 +2,9 @@ package com.example.ebooks;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class activity_payment extends AppCompatActivity {
 
@@ -11,4 +13,5 @@ public class activity_payment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.payment);
     }
+
 }

@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#1C42F3</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimaryDark">#0049FF</color>
     <color name="colorAccent">#143CF5</color>
     <color name="rs">#ffff</color>
     <color name="total">#000000</color>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
     <color name="LightWhite">#F5F5F3</color>
     <color name="fullwhite">#C6C6C6</color>
     <color name="blackcolor">#111111</color>
-    <color name="white">#ffffff</color>
-    <color name="colorPrimary">#49BEFF</color>
-    <color name="colorPrimaryDark">#65DCE5</color>
-    <color name="colorAccent">#0D5D98</color>
+
 
     <color name="address">#2F7092</color>
     <color name="followers">#0D5D98</color>

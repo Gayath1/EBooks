@@ -1,10 +1,12 @@
-package com.example.madp1;
+package com.example.ebooks;
 
-import android.content.Intent;
+
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+
+
 import android.widget.ImageView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class login extends AppCompatActivity {
 
@@ -18,9 +20,5 @@ public class login extends AppCompatActivity {
 
     }
 
-    public void goback(View view) {
-        Intent ic = new Intent(login.this,MainActivity.class);
-        startActivity(ic);
 
-    }
 }

@@ -1,13 +1,15 @@
-package com.example.pro;
+package com.example.ebooks;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
-public class Activity_Main extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+
+public class userprofile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_userprofile);
     }
 }

@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".userprofile"></activity>
         <activity android:name=".sign" />
-        <activity android:name=".Login" />
+        <activity android:name=".login" />
         <activity android:name=".store" />
         <activity android:name=".book_details" />
         <activity android:name=".activity_payment" />
