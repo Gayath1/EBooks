@@ -17,7 +17,7 @@
         android:layout_marginEnd="157dp"
         android:layout_marginRight="157dp"
         android:layout_marginBottom="40dp"
-        android:text="@string/admin_panel"
+        android:text="Admin_panel"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +51,7 @@
         android:layout_marginEnd="52dp"
         android:layout_marginRight="52dp"
         android:layout_marginBottom="250dp"
-        android:text="@string/orders"
+        android:text="Orders"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,17 +80,15 @@
         android:layout_width="170dp"
         android:layout_height="156dp"
         android:layout_marginStart="23dp"
-        android:layout_marginLeft="23dp"
         android:layout_marginTop="46dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageButton2"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintVertical_bias="0.7"
-        app:srcCompat="@drawable/Purchasee" />
+        app:srcCompat="@drawable/purchasee" />
 
     <ImageView
         android:id="@+id/imageView2"
