@@ -5,10 +5,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import androidx.recyclerview.widget.RecyclerView;
-import com.example.pickabook.R;
-import com.example.pickabook.models.Book;
+
+import com.example.ebooks.R;
+import com.example.ebooks.models.Book;
 import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.MyViewHolder> {

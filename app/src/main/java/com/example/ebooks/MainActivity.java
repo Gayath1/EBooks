@@ -23,7 +23,7 @@ import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class AdminMainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawerLayout;
     private Toolbar toolbar;
     private NavigationView navigationView;
@@ -39,18 +39,18 @@ public class AdminMainActivity extends AppCompatActivity implements NavigationVi
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
-    private int[] titles = new int[]{R.drawable.ic_book, R.drawable.ic_category, R.drawable.ic_users, R.drawable.ic_order};
+    private int[] titles = new int[]{R.drawable.ic_home, R.drawable.ic_category, R.drawable.ic_order, R.drawable.ic_profile};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_main);
+        setContentView(R.layout.activity_main);
 
-        toolbar = findViewById(R.id.adminMainToolbar);
-        drawerLayout = findViewById(R.id.adminMainDrawer);
-        navigationView = findViewById(R.id.adminMainNavigationView);
-        viewPager2 = findViewById(R.id.adminMainViewPager);
-        tabLayout = findViewById(R.id.adminMainTabLayout);
+        toolbar = findViewById(R.id.mainToolbar);
+        drawerLayout = findViewById(R.id.mainDrawer);
+        navigationView = findViewById(R.id.mainNavigationView);
+        viewPager2 = findViewById(R.id.mainViewPager);
+        tabLayout = findViewById(R.id.mainTabLayout);
 
         setSupportActionBar(toolbar);
 
@@ -60,6 +60,7 @@ public class AdminMainActivity extends AppCompatActivity implements NavigationVi
 
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
         String currentUserName = sharedPreferences.getString("loggedUserName", "");
+        boolean isAdmin = sharedPreferences.getBoolean("isAdmin", false);
 
         navigationView.setNavigationItemSelectedListener(this);
         View navigationHeader = navigationView.getHeaderView(0);
@@ -67,7 +68,7 @@ public class AdminMainActivity extends AppCompatActivity implements NavigationVi
         drawerName = navigationHeader.findViewById(R.id.drawerHeaderName);
         drawerEmail = navigationHeader.findViewById(R.id.drawerHeaderEmail);
 
-        drawerName.setText(currentUserName +" (Admin)");
+        drawerName.setText(currentUserName);
         drawerEmail.setText(currentUser != null && currentUser.getEmail() != null ? currentUser.getEmail() : "-");
 
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
@@ -75,7 +76,7 @@ public class AdminMainActivity extends AppCompatActivity implements NavigationVi
         actionBarDrawerToggle.setDrawerIndicatorEnabled(true);
         actionBarDrawerToggle.syncState();
 
-        pagerAdapter = new PagerAdapter(this, tabLayout.getTabCount(), true);
+        pagerAdapter = new PagerAdapter(this, tabLayout.getTabCount(), isAdmin);
         viewPager2.setAdapter(pagerAdapter);
 
         new TabLayoutMediator(tabLayout, viewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
@@ -92,41 +93,26 @@ public class AdminMainActivity extends AppCompatActivity implements NavigationVi
             }
 
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) { }
+            public void onTabUnselected(TabLayout.Tab tab) {
+            }
 
             @Override
-            public void onTabReselected(TabLayout.Tab tab) { }
+            public void onTabReselected(TabLayout.Tab tab) {
+            }
         });
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.admin_action_menu, menu);
+        getMenuInflater().inflate(R.menu.action_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.actionAdd) {
-            int index = tabLayout.getSelectedTabPosition();
-
-            switch (index) {
-                case 0:
-                    Intent intent1 = new Intent(getApplicationContext(), BookEditActivity.class);
-                    intent1.putExtra("id", "");
-                    startActivity(intent1);
-                    break;
-                case 1:
-                    Intent intent2 = new Intent(getApplicationContext(), CategoryItemActivity.class);
-                    intent2.putExtra("id", "");
-                    startActivity(intent2);
-                    break;
-                case 2:
-                    Intent intent3 = new Intent(getApplicationContext(), UserItemActivity.class);
-                    intent3.putExtra("id", "");
-                    startActivity(intent3);
-                    break;
-            }
+        if (item.getItemId() == R.id.actionCart) {
+            Intent intent = new Intent(MainActivity.this, CartActivity.class);
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -135,32 +121,30 @@ public class AdminMainActivity extends AppCompatActivity implements NavigationVi
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         drawerLayout.closeDrawer(GravityCompat.START);
 
-        if (item.getItemId() == R.id.itemAdminBooks) {
-            TabLayout.Tab tab = tabLayout.getTabAt(0);
-            tab.select();
-        }
-
-        if (item.getItemId() == R.id.itemAdminCat) {
+        if (item.getItemId() == R.id.itemCat) {
             TabLayout.Tab tab = tabLayout.getTabAt(1);
             tab.select();
         }
-
-        if (item.getItemId() == R.id.itemAdminUsers) {
+        if (item.getItemId() == R.id.itemHome) {
+            TabLayout.Tab tab = tabLayout.getTabAt(0);
+            tab.select();
+        }
+        if (item.getItemId() == R.id.itemOrders) {
             TabLayout.Tab tab = tabLayout.getTabAt(2);
             tab.select();
         }
-        if (item.getItemId() == R.id.itemAdminOrders) {
+        if (item.getItemId() == R.id.itemMyProfile) {
             TabLayout.Tab tab = tabLayout.getTabAt(3);
             tab.select();
         }
-        if (item.getItemId() == R.id.itemAdminSignOut) {
+        if (item.getItemId() == R.id.itemSignOut) {
             firebaseAuth.signOut();
             editor.putString("loggedUserName", "");
             editor.putBoolean("isLoggedIn", false);
             editor.putBoolean("isAdmin", false);
             editor.apply();
 
-            Intent intent = new Intent(AdminMainActivity.this, WelcomeActivity.class);
+            Intent intent = new Intent(MainActivity.this, WelcomeActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
             finish();

@@ -14,6 +14,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:text="Checkout"
+        android:background="@drawable/roundrhapebtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BookEditActivity">
+    tools:context=".UserItemActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/bookEditImageUrl"
+            android:id="@+id/userItemFirstName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -20,14 +20,14 @@
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:ems="10"
-            android:hint="Image Url"
-            android:inputType="textUri|textPersonName"
+            android:hint="First Name"
+            android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/bookEditName"
+            android:id="@+id/userItemLastName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -36,14 +36,14 @@
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:ems="10"
-            android:hint="Name"
+            android:hint="Last Name"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bookEditImageUrl" />
+            app:layout_constraintTop_toBottomOf="@+id/userItemFirstName" />
 
         <EditText
-            android:id="@+id/bookEditABN"
+            android:id="@+id/userItemAddress"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -52,43 +52,50 @@
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:ems="10"
-            android:hint="ABN"
+            android:hint="Address"
             android:inputType="textPersonName"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bookEditAuthor" />
-
-        <Button
-            android:id="@+id/bookEditButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:layout_marginBottom="24dp"
-            android:text="Edit"
-            android:background="@drawable/roundrhapebtn"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bookEditCategorySpinner" />
-
-        <Spinner
-            android:id="@+id/bookEditCategorySpinner"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            android:spinnerMode="dropdown"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bookEditPrice" />
+            app:layout_constraintTop_toBottomOf="@+id/userItemConfirmPassword" />
+
+        <Button
+            android:id="@+id/userItemEditButton"
+            android:layout_width="90dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="24dp"
+            android:background="@drawable/roundrhapebtn"
+            android:text="Edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userItemIsAdminSwitch" />
+
+        <Switch
+            android:id="@+id/userItemIsAdminSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:textIsSelectable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userItemAddress" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="IsAdmin"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/userItemIsAdminSwitch"
+            app:layout_constraintStart_toEndOf="@+id/userItemIsAdminSwitch"
+            app:layout_constraintTop_toTopOf="@+id/userItemIsAdminSwitch" />
 
         <EditText
-            android:id="@+id/bookEditAuthor"
+            android:id="@+id/userItemPasswordField"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -97,14 +104,15 @@
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:ems="10"
-            android:hint="Author"
-            android:inputType="textPersonName"
+            android:hint="Confirm"
+            android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bookEditName" />
+            app:layout_constraintTop_toBottomOf="@+id/userItemEmail" />
 
         <EditText
-            android:id="@+id/bookEditDescription"
+            android:id="@+id/userItemConfirmPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -113,14 +121,14 @@
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:ems="10"
-            android:hint="Description"
-            android:inputType="textPersonName"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bookEditABN" />
+            app:layout_constraintTop_toBottomOf="@+id/userItemPasswordField" />
 
         <EditText
-            android:id="@+id/bookEditPrice"
+            android:id="@+id/userItemEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -129,12 +137,11 @@
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:ems="10"
-            android:hint="Price"
-            android:inputType="numberDecimal"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bookEditDescription" />
+            app:layout_constraintTop_toBottomOf="@+id/userItemLastName" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </ScrollView>

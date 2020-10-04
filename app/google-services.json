@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "808146990791",
-    "firebase_url": "https://ebooks-c3afb.firebaseio.com",
-    "project_id": "ebooks-c3afb",
-    "storage_bucket": "ebooks-c3afb.appspot.com"
+    "project_number": "556561464343",
+    "firebase_url": "https://pickabook-6bc0c.firebaseio.com",
+    "project_id": "pickabook-6bc0c",
+    "storage_bucket": "pickabook-6bc0c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:808146990791:android:928c5b1a6fb46ba71fb0e2",
+        "mobilesdk_app_id": "1:556561464343:android:a8c1d8b8b2c4a2e05bf052",
         "android_client_info": {
           "package_name": "com.example.ebooks"
         }
       },
       "oauth_client": [
         {
-          "client_id": "808146990791-htcdukcqvbpmuuc7for6r502adsunvcd.apps.googleusercontent.com",
+          "client_id": "556561464343-ot8bs4q00v59d3n4nhqdcmancad86060.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCubu8yPmlXqYsTK03emBOlub25YAblk-g"
+          "current_key": "AIzaSyC6Y1QXXWOQgCdCDkwB5qYBHZdJoR1KSvI"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "808146990791-htcdukcqvbpmuuc7for6r502adsunvcd.apps.googleusercontent.com",
+              "client_id": "556561464343-ot8bs4q00v59d3n4nhqdcmancad86060.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

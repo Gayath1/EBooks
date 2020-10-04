@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">PickABook</string>
-    <string name="app_name_long">Pick A Book</string>
+    <string name="app_name">E books</string>
+    <string name="app_name_long">E Books</string>
     <string name="title_activity_login">LoginActivity</string>
 
     <string name="next">Next</string>

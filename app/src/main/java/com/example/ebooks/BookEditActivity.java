@@ -1,8 +1,5 @@
 package com.example.ebooks;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,15 +9,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import com.example.pickabook.models.Category;
-import com.example.pickabook.models.Book;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.ebooks.models.Book;
+import com.example.ebooks.models.Category;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import es.dmoral.toasty.Toasty;
 
 public class BookEditActivity extends AppCompatActivity {
@@ -125,7 +129,9 @@ public class BookEditActivity extends AppCompatActivity {
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (isAdd) {
+                if (imageUrlField.getText().toString().equals("") || imageUrlField.getText() == null) {
+                    Toasty.success(BookEditActivity.this, "Please enter image URL.", Toasty.LENGTH_SHORT).show();
+                } else {
                     bookForSave.setImageUrl(imageUrlField.getText().toString());
                     bookForSave.setName(nameField.getText().toString());
                     bookForSave.setAuthor(authorField.getText().toString());
@@ -137,42 +143,33 @@ public class BookEditActivity extends AppCompatActivity {
                         bookForSave.setCategoryId(((Category) categorySpinner.getSelectedItem()).getId());
                     }
 
-                    databaseReference.child(databaseReference.push().getKey()).setValue(bookForSave);
+                    if (isAdd) {
+                        databaseReference.child(databaseReference.push().getKey()).setValue(bookForSave);
 
-                    Toasty.success(BookEditActivity.this, "Book added successfully.", Toasty.LENGTH_SHORT).show();
+                        Toasty.success(BookEditActivity.this, "Book added successfully.", Toasty.LENGTH_SHORT).show();
 
-                    Intent backIntent = new Intent(BookEditActivity.this, AdminMainActivity.class);
-                    startActivity(backIntent);
-                } else {
-                    if (isEdit) {
-                        bookForSave.setImageUrl(imageUrlField.getText().toString());
-                        bookForSave.setName(nameField.getText().toString());
-                        bookForSave.setAuthor(authorField.getText().toString());
-                        bookForSave.setABNNumber(abnField.getText().toString());
-                        bookForSave.setPrice(Double.parseDouble(priceField.getText().toString()));
-                        bookForSave.setDescription(descriptionField.getText().toString());
-
-                        if (((Category) categorySpinner.getSelectedItem()).getId() != null) {
-                            bookForSave.setCategoryId(((Category) categorySpinner.getSelectedItem()).getId());
-                        }
-
-                        databaseReference.child(bookForSave.getId()).setValue(bookForSave);
-
-                        Toasty.success(BookEditActivity.this, "Book updated successfully.", Toasty.LENGTH_SHORT).show();
                         Intent backIntent = new Intent(BookEditActivity.this, AdminMainActivity.class);
                         startActivity(backIntent);
-                        finish();
                     } else {
-                        isEdit = true;
+                        if (isEdit) {
+                            databaseReference.child(bookForSave.getId()).setValue(bookForSave);
 
-                        imageUrlField.setEnabled(true);
-                        nameField.setEnabled(true);
-                        authorField.setEnabled(true);
-                        abnField.setEnabled(true);
-                        priceField.setEnabled(true);
-                        descriptionField.setEnabled(true);
-                        categorySpinner.setEnabled(true);
-                        editButton.setText("Save");
+                            Toasty.success(BookEditActivity.this, "Book updated successfully.", Toasty.LENGTH_SHORT).show();
+                            Intent backIntent = new Intent(BookEditActivity.this, AdminMainActivity.class);
+                            startActivity(backIntent);
+                            finish();
+                        } else {
+                            isEdit = true;
+
+                            imageUrlField.setEnabled(true);
+                            nameField.setEnabled(true);
+                            authorField.setEnabled(true);
+                            abnField.setEnabled(true);
+                            priceField.setEnabled(true);
+                            descriptionField.setEnabled(true);
+                            categorySpinner.setEnabled(true);
+                            editButton.setText("Save");
+                        }
                     }
                 }
             }

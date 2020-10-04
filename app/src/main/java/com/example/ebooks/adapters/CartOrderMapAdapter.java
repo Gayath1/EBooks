@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.pickabook.R;
-import com.example.pickabook.models.CartOrderMap;
+import com.example.ebooks.R;
+import com.example.ebooks.models.CartOrderMap;
 
 import java.util.List;
 
