@@ -52,6 +52,7 @@
             />
 
         <EditText
+            android:id="@+id/name"
             android:layout_width="280dp"
             android:layout_height="45dp"
             android:hint="Your Name"
@@ -78,6 +79,7 @@
             />
 
         <EditText
+            android:id="@+id/address"
             android:layout_width="280dp"
             android:layout_height="45dp"
             android:hint="Address"
@@ -91,6 +93,7 @@
             />
 
         <EditText
+            android:id="@+id/email"
             android:layout_width="280dp"
             android:layout_height="45dp"
             android:hint="Email"
@@ -104,6 +107,7 @@
             />
 
         <EditText
+            android:id="@+id/password"
             android:layout_width="280dp"
             android:layout_height="45dp"
             android:hint="Password"
@@ -116,7 +120,9 @@
             android:background="@drawable/btn"
             />
 
+
         <Button
+
             android:layout_width="280dp"
             android:layout_height="45dp"
             android:id="@+id/Joinus"
@@ -126,15 +132,27 @@
             android:layout_marginTop="25dp"
             android:elevation="5dp"
             android:onClick="gotoNext"
-            android:background="@drawable/joinbtn"/>
+            android:background="@drawable/joinbtn" />
+
+        <Button
+
+            android:id="@+id/login"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/joinbtn"
+            android:elevation="5dp"
+            android:onClick="onlogin"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
 
         <TextView
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="By Pressing 'Join Us' you agree \n to our terms and conditions"
             android:textColor="@color/fullwhite"
-            android:layout_marginTop="25dp"/>
-
+            android:layout_marginTop="25dp" />
 
 
     </LinearLayout>

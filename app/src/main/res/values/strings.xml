@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">E Books</string>
-    <string name="Title">Payment</string>
-    <string name="thanks">Thank you</string>
+    <string name="app_name">PickABook</string>
+    <string name="app_name_long">Pick A Book</string>
+    <string name="title_activity_login">LoginActivity</string>
 
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
